@@ -6,8 +6,11 @@ pygame.init()
 
 
 game_over = False
-background = Background(100, 100)
-
+background = Background(1000, 1000)
 #start game
 while not game_over:
     background.draw_self()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            game_over = True
+            break
