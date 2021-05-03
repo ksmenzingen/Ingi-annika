@@ -7,6 +7,7 @@ class Alien:
         self.background = background
         self.figure = pygame.image.load('./data/'+image_name)
 
-    #def draw_self(self):
+    def draw_self(self,background):
+        print (self.figure)
 
         

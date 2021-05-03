@@ -16,4 +16,5 @@ while not game_over:
             game_over = True
             break
 
+
 pygame.time.delay(delay)
