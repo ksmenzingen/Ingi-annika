@@ -8,5 +8,5 @@ class Background:
         self.surface = pygame.display.set_mode((self.width, self.height))
 
     def draw_self(self):
-        self.surface.fill((0, 0, 139))
+        self.surface.fill((8, 0, 70))
         pygame.display.update()
