@@ -13,7 +13,7 @@ class Background:
         columns = 20
         rows = columns
         self.surface.fill((8, 0, 70))
-        pygame.display.update()
+        #pygame.display.update()
         for i in range(0,columns):
             pygame.draw.line(self.surface,(200,200,200),(x0,self.height),(x0,0))
             x0 += cellSize
