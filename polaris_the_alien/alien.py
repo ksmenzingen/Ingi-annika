@@ -2,10 +2,11 @@ import pygame
 
 #slkfjh
 class Alien:
-    def __init__(self,speed,surface):
+    def __init__(self,speed,background,image_name):
         self.speed = speed
-        self.surface = surface
+        self.background = background
+        self.figure = pygame.image.load('./data/'+image_name)
 
-    def draw_self(self):
-        alien = pygame.image.load('./data/alien_drawing.png')
+    #def draw_self(self):
+
         
