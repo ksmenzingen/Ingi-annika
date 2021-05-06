@@ -13,16 +13,11 @@ class Background:
         columns = 20
         rows = columns
         self.surface.fill((8, 0, 70))
-        for i in range(0,columns):
-            pygame.draw.line(self.surface,(200,200,200),(x0,self.height),(x0,0))
-            x0 += cellSize
-        for i in range(0,rows):
-            pygame.draw.line(self.surface,(200,200,200),(self.width,y0),(0,y0))
-            y0 += cellSize
-        self.surface.blit(alien.figure, (self.height*0.5, self.height*0.5))
+        self.surface.blit(alien.figure, (alien.coord_x, alien.coord_y))
         height = 100
         color = (200,0,0)
         pygame.draw.rect(self.surface, (color), pygame.Rect(0, self.height - height, self.height, height))
         pygame.draw.rect(self.surface, (color), pygame.Rect(0, 0, self.height, height))
+        #pygame.draw.polygon(self.surface,(color),((25,75),(67,125),(250,250)))
         pygame.display.update()
 
