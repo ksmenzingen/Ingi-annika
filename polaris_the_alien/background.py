@@ -7,9 +7,6 @@ class Background:
         self.surface = pygame.display.set_mode((self.width, self.height))
 
     def draw_self(self,alien):
-        x0 = 0
-        y0 = 0
-        cellSize = self.width/20
         columns = 20
         rows = columns
         self.surface.fill((8, 0, 70))
