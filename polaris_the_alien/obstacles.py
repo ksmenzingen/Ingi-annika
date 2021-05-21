@@ -2,21 +2,22 @@ import pygame
 import random
 
 class Obstacles:
-    def __init__(self,background,color,height,rand1,rand2):
+    def __init__(self,background,color,height):
         self.background = background
         self.color = color
         self.height = height
-        self.rand1 = rand1
-        self.rand2 = rand2
+        self.di_bottom = {}
+        self.di_top = {}
 
-    def generate(self):
+    def border(self):
         #border
         pygame.draw.rect(self.background.surface, (self.color),
                          pygame.Rect(0, self.background.height - self.height, self.background.height, self.height))
         pygame.draw.rect(self.background.surface, (self.color),
                          pygame.Rect(0, 0, self.background.height, self.height))
-        #random generated
-        pygame.draw.rect(self.background.surface, (self.color),
-                         pygame.Rect(0, self.background.height - 2 * self.height, self.rand1, self.rand2))
-        pygame.draw.rect(self.background.surface, (self.color),
-                         pygame.Rect(0, self.height, self.rand1, self.rand2))
+
+
+    def generate(self):
+        random.randint(50, 125) #breite
+        random.randint(100, 300) #höhe
+

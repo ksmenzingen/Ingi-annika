@@ -7,6 +7,8 @@ class Alien:
         self.coord_x = coord_x
         self.coord_y = coord_y
 
+    def move(self,change):
+        self.coord_y += change
 
 
 
