@@ -22,19 +22,19 @@ while not game_over:
                 game_over = True
 
         while event.type == pygame.KEYDOWN:
-        #if event.type == pygame.KEYUP:
-            #break
+
             if event.key == pygame.K_DOWN:
-                alien.move(5)
+                alien.move(3)
                 background.draw_self(alien,obstacles)
 
 
-                if event.key == pygame.K_UP:
-                    alien.move(5)
-                    background.draw_self(alien,obstacles)
+            if event.key == pygame.K_UP:
+                alien.move(-3)
+                background.draw_self(alien,obstacles)
 
-            while event.type == pygame.KEYUP:
-                break
+            for event in pygame.event.get():
+                if event.type == pygame.KEYUP:
+                    break
 
 
         if event.type == pygame.QUIT:
