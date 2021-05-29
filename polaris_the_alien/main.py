@@ -25,12 +25,15 @@ while not game_over:
 
             if event.key == pygame.K_DOWN:
                 alien.move(3)
+                alien.figure = pygame.transform.scale(pygame.image.load('./data/alien_drawing2.png').convert_alpha(),(115,100))
                 background.draw_self(alien,obstacles)
 
 
             if event.key == pygame.K_UP:
                 alien.move(-3)
+                alien.figure = pygame.transform.scale(pygame.image.load('./data/alien_image_combustion2.png').convert_alpha(),(115,150))
                 background.draw_self(alien,obstacles)
+
 
             for event in pygame.event.get():
                 if event.type == pygame.KEYUP:

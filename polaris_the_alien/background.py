@@ -25,7 +25,7 @@ class Background:
         #player
         self.surface.blit(alien.figure, (alien.coord_x, alien.coord_y))
         obstacles.border()
-        obstacles.draw_self()
+        obstacles.draw()
         #height = 100
         #pygame.draw.polygon(self.surface,(color),((25,75),(67,125),(250,250)))
         pygame.display.update()
