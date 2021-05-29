@@ -39,9 +39,19 @@ while not game_over:
                 if event.type == pygame.KEYUP:
                     break
 
+            for i in range(len(obstacles.li_top)):
+                if alien.coord_y <= obstacles.li_top[i][1] + 95 and obstacles.li_top[i][0] >= 350:
+                    game_over = True
+                    break
+
+                if alien.coord_y >= obstacles.li_top[i][1] + 200 and obstacles.li_top[i][0] >= 350:
+                    game_over = True
+                    break
         if event.type == pygame.QUIT:
             game_over = True
             break
+
+
 
     for i in range(len(obstacles.li_top)):
         if alien.coord_y <= obstacles.li_top[i][1]+95 and obstacles.li_top[i][0] >= 350:
