@@ -11,42 +11,47 @@ delay = 200
 game_over = False
 background = Background(800, 800)
 alien = Alien(100,"alien_drawing2.png",(background.height*0.5-50),100)
-obstacles = Obstacles(background,(200,0,0),100,random.randint(50,125),random.randint(100,300))
+obstacles = Obstacles(background,(200,0,0),100)
 
-#start game
+
 while not game_over:
-    #background.draw_self()
     for event in pygame.event.get():
-          while event.type == pygame.KEYDOWN:
+
+        while event.type == pygame.KEYDOWN:
             if event.key == pygame.K_DOWN:
-<<<<<<< HEAD
+
                 alien.coord_y += 0.5
                 background.draw_self(alien,obstacles)
-=======
-                alien.move(3)
+                alien.move(6)
                 alien.figure = pygame.transform.scale(pygame.image.load('./data/alien_drawing2.png').convert_alpha(),(115,100))
                 background.draw_self(alien,obstacles)
 
 
             if event.key == pygame.K_UP:
-                alien.move(-3)
+                alien.move(-6)
                 alien.figure = pygame.transform.scale(pygame.image.load('./data/alien_image_combustion2.png').convert_alpha(),(115,150))
                 background.draw_self(alien,obstacles)
 
+            if event.key == pygame.K_ESCAPE:
+                game_over = True
 
             for event in pygame.event.get():
->>>>>>> a60c96cea837e7b5adfc27872563fec4ab17f9bb
                 if event.type == pygame.KEYUP:
                     break
 
-            if event.key == pygame.K_UP:
-                alien.coord_y -= 5
-                background.draw_self(alien,obstacles)
-
-          if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT:
             game_over = True
             break
-    #obstacles.generate()
+
+    for i in range(len(obstacles.li_top)):
+        if alien.coord_y <= obstacles.li_top[i][1]+95 and obstacles.li_top[i][0] >= 350:
+            game_over = True
+            break
+
+        if alien.coord_y >= obstacles.li_top[i][1]+200 and obstacles.li_top[i][0] >= 350:
+            game_over = True
+            break
+
     background.draw_self(alien,obstacles)
     pygame.display.update()
 

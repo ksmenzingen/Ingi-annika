@@ -1,4 +1,5 @@
 import pygame
+from obstacles import*
 
 class Alien:
     def __init__(self,speed,image_name,coord_x,coord_y):
@@ -10,6 +11,3 @@ class Alien:
 
     def move(self,change):
         self.coord_y += change
-
-
-

@@ -12,7 +12,6 @@ class Background:
         comet1 = pygame.transform.scale(pygame.image.load('./data/comet1.png').convert_alpha(),(120,100))
         stars = pygame.transform.scale(pygame.image.load('./data/stars.png').convert_alpha(),(400,400))
         columns = 20
-        rows = columns
         self.surface.fill((8, 0, 70))
         #background
         self.surface.blit(stars, (0, 0))
@@ -22,12 +21,16 @@ class Background:
         self.surface.blit(asteroid, (100,200))
         self.surface.blit(planet1, (600,500))
         self.surface.blit(comet1,(220,550))
+        font = pygame.font.Font('freesansbold.ttf', 50)
+        text = font.render('score ' + str(obstacles.score), True, (255, 255, 255))
+        textRect = text.get_rect()
+        textRect.center = (690, 150)
+        if text != None:
+            self.surface.blit(text,textRect)
         #player
         self.surface.blit(alien.figure, (alien.coord_x, alien.coord_y))
         obstacles.border()
         obstacles.draw()
-        #height = 100
-        #pygame.draw.polygon(self.surface,(color),((25,75),(67,125),(250,250)))
         pygame.display.update()
 
 
